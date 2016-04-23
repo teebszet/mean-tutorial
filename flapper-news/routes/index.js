@@ -62,6 +62,7 @@ router.put('/posts/:post/upvote', function (req, res, next) {
 router.post('/posts/:post/comments', function (req, res, next) {
   var comment = new Comment(req.body);
   comment.post = req.post;
+  console.log(comment);
 
   comment.save(function (err, comment) {
     if (err) { return next(err); }
